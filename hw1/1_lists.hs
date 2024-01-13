@@ -64,8 +64,6 @@ main = do
     print("x_bag ", x_bag)
 
     putStrLn "\n(d) - Checks for subbag"
-    -- TODO subbag is not working as expected
-    --let result = ( xs `subbag` xs)
     let x_big_list = [7,3,8,7,3,2,7,5,6,6,6]
     let x_big_bag = bag x_big_list
     let result = x_bag `subbag` x_big_bag
