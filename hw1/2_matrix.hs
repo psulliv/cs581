@@ -14,7 +14,11 @@ vAddZipWith x y = zipWith (+) x y
 mAdd :: Matrix -> Matrix -> Matrix
 mAdd [] [] = []
 mAdd x y = zipWith vAdd x y
--- To add two matrices, I need to add each row
+
+-- 2.c Inner Product
+iProd :: Row -> Column -> Int
+iProd [] [] = 0
+iProd (x:xs) (y:ys) = (x * y) + iProd xs ys
 
 main :: IO ()
 main = do
@@ -36,5 +40,9 @@ main = do
               [70,80,90]]
     let mA = mAdd m1 m2
     print("Added together: ", mA)
+
+    putStrLn "\n(c) - Inner Product"
+    let vI = iProd v1 v2
+    print("Inner product: ", vI)
  
     putStrLn "\nDONE"
