@@ -20,6 +20,11 @@ iProd :: Row -> Column -> Int
 iProd [] [] = 0
 iProd (x:xs) (y:ys) = (x * y) + iProd xs ys
 
+-- 2.d Outer Product
+oProd :: Column -> Row -> Matrix
+oProd [] _ = []
+oProd (c:cs) ys = map (\x -> c * x ) ys : oProd cs ys
+
 main :: IO ()
 main = do
     putStrLn "\n(a) - Vector Addition"
@@ -44,5 +49,9 @@ main = do
     putStrLn "\n(c) - Inner Product"
     let vI = iProd v1 v2
     print("Inner product: ", vI)
+
+    putStrLn "\n(d) - Outer Product"
+    let vO = oProd v1 v2
+    print("Outer product: ", vO)
  
     putStrLn "\nDONE"
