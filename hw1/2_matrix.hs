@@ -25,6 +25,12 @@ oProd :: Column -> Row -> Matrix
 oProd [] _ = []
 oProd (c:cs) ys = map (\x -> c * x ) ys : oProd cs ys
 
+-- 2.e Size
+
+mSize :: Matrix -> (Int, Int)
+mSize [] = (0,0)
+mSize (x:xs) = let (r, c) = mSize xs in (r + 1, foldl (\acc x -> acc + 1) 0 x)
+
 main :: IO ()
 main = do
     putStrLn "\n(a) - Vector Addition"
@@ -53,5 +59,21 @@ main = do
     putStrLn "\n(d) - Outer Product"
     let vO = oProd v1 v2
     print("Outer product: ", vO)
+
+    putStrLn "\n(e) - Size"
+    let vO12 = oProd v1 v2
+    let s12 = mSize vO12
+    print("Size of outer product: ", s12)
+
+    let v3 = [1,2,3]
+    let v4 = [4,5,6,7]
+    let vO34 = oProd v3 v4
+    let s34 = mSize vO34
+    let vO43 = oProd v4 v3
+    let s43 = mSize vO43
+    print("Outer product: ", vO34)
+    print("Size of outer product: ", s34)
+    print("Outer product: ", vO43)
+    print("Size of outer product: ", s43)
  
     putStrLn "\nDONE"
