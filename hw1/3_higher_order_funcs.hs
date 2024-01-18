@@ -37,7 +37,17 @@ main = do
   print (show (power (2:) 5 []))
   print "part d: plus 1 1"
   print (show (plus 1 1))
-  print "part d: plus 1 (-1)"
+  print "part d: plus 1 (-2)"
   print (show (plus 1 (-2)))
   print "part d: plus (-1) (-1)"
   print (show (plus (-1) (-1)))
+  print "part d: times 5 1"
+  print (show (times 5 1))
+  print "part d: times (-1) 5"
+  print (show (times (-1) 5))
+  print "part d: times 5 (-1)"
+  print (show (times 5 (-1)))
+  print "part d: times 1 (-5)"
+  print (show (times 1 (-5)))
+  print "part d: times 0 (-5)"
+  print (show (times 0 (-5)))
