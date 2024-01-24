@@ -31,7 +31,7 @@ main = do
   print (show (applyAll [(+1) , (*2), (/3)] 5))
   print "part b: satisfies [ even , True, (\\x -> (>3) )] 4"
   print (show (satisfies [ even , const True, (>3) ] 4))
-  print "part b: satisfies [ even , True, (\\x -> (>3) )] 4"
+  print "part b: satisfies [ even , True, (\\x -> (>3) )] 5"
   print (show (satisfies [ even , const True, (>3) ] 5))
   print "part c: power (2:) 5 []"
   print (show (power (2:) 5 []))
