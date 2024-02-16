@@ -17,7 +17,7 @@ type Lines = [Line]
 semL :: Cmd -> State -> (State, Lines)
 semL (Pen m) (_, x, y) = ((m, x, y), [])
 semL (MoveTo a b) (Down, x, y) = ((Down, a, b), [(x, y, a, b)])
-semL (MoveTo a b) (Up, x, y) = ((Down, x, y), [])
+semL (MoveTo a b) (Up, x, y) = ((Up, x, y), [])
 semL (Sequ c1 c2) s0 =
   let (s1, lines1) = semL c1 s0
       (s2, lines2) = semL c2 s1
